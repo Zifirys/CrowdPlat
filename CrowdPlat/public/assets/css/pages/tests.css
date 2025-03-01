@@ -1,0 +1,58 @@
+.test-container {
+    background: rgba(255, 59, 59, 0.1);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.test-card{
+    border: none;
+    box-shadow: 0 0 12px 4px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    background-color: #111;
+    color: #fff;
+}
+
+.form-control, .form-control-file {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px;
+    caret-color: #ff0000;
+}
+
+.form-control:focus {
+    border-color: #ff4d4d;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.question {
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.remove-btn {
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+}
+
+.question-container {
+    gap: 10px;
+}
+
+.answer {
+    gap: 10px;
+}
+
+.answer-remove-btn {
+    cursor: pointer;
+    right: 7px;
+    top: 7px;
+}

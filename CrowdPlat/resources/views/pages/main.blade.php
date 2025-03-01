@@ -43,7 +43,7 @@
     <section id="tests" class="container mt-5">
         <h2>Интересные тесты</h2>
         <p>Проходи тесты и проверяй свои знания!</p>
-        <a href="#" class="btn btn-red">Пройти тест</a>
+        <a href="{{ url('/test') }}" class="btn btn-red">Пройти тест</a>
     </section>
 
     <section id="register" class="container mt-5">

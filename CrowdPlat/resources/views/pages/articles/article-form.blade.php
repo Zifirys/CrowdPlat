@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title', 'Все статьи')
+@section('title', 'Cоздание/редактирование статьи')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/pages/articles.css') }}">
 @endsection

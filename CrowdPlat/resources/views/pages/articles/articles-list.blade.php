@@ -17,7 +17,7 @@
                             <h5 class="card-title text-center">Заголовок</h5>
                             <p class="card-text">Описание</p>
                             <div class="d-flex justify-content-end">
-                                <a href="{{ url('/articles/read') }}" class="btn btn-red">Читать</a>
+                                <a href="" class="btn btn-red">Читать</a>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                             <h5 class="card-title text-center">Заголовок</h5>
                             <p class="card-text">Описание</p>
                             <div class="d-flex justify-content-end">
-                                <a href="{{ url('/articles/read') }}" class="btn btn-red">Читать</a>
+                                <a href="" class="btn btn-red">Читать</a>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             <h5 class="card-title text-center">Заголовок</h5>
                             <p class="card-text">Описание</p>
                             <div class="d-flex justify-content-end">
-                                <a href="{{ url('/articles/read') }}" class="btn btn-red">Читать</a>
+                                <a href="" class="btn btn-red">Читать</a>
                             </div>
                         </div>
                     </div>

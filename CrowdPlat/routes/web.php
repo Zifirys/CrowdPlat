@@ -6,10 +6,12 @@ Route::get('/', function () {
     return view('pages.main');
 });
 
-Route::get('/articles', function () {
-    return view('pages.articles.articles-list');
+Route::get('/test', function () {
+    return view('pages.tests.tests-list');
 });
 
-Route::get('/articles/read', function () {
-    return view('pages.articles.article-read');
+Route::get('/test/create', function () {
+    return view('pages.tests.tests-create');
 });
+
+

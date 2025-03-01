@@ -27,7 +27,9 @@
             </div>
         </nav> 
 
-        @yield('content')
+        <div class="page-wrapper">
+            @yield('content')
+        </div>
 
         <footer class="footer">
             <div class="container">
