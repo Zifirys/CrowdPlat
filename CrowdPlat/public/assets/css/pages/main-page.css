@@ -12,7 +12,6 @@
     text-align: center;
 }
 
-/* Секции */
 section {
     padding: 40px 0;
     background-color: #111;
@@ -21,8 +20,6 @@ section {
     color: #fff;
 }
 
-
-/* Рейтинг */
 .list-group-item {
     font-size: 1.1rem;
     background-color: #111;

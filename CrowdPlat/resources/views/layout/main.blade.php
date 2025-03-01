@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title')</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{{ asset('assets/css/layout/main-layout.css') }}">
         @yield('css')
     </head>
@@ -18,7 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Статьи</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/articles') }}">Статьи</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Тесты</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Регистрация/Рейтинг</a></li>
                     </ul>

@@ -7,5 +7,9 @@ Route::get('/', function () {
 });
 
 Route::get('/articles', function () {
-    return view('articles.articles-list');
+    return view('pages.articles.articles-list');
+});
+
+Route::get('/articles/read', function () {
+    return view('pages.articles.article-read');
 });
