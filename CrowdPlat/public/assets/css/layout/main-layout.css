@@ -4,6 +4,13 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+.page-wrapper {
+    padding-top: 100px;
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+
 .navbar {
     background: linear-gradient(90deg, #000, #da0000);
     padding: 15px;
@@ -69,10 +76,4 @@ body > .container {
         margin: 0;
         padding: 0;
     }
-}
-
-.page-wrapper {
-    padding-top: 100px;
-    max-height: calc(100vh - 80px);
-    overflow: auto;
 }
