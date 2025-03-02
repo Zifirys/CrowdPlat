@@ -4,12 +4,19 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.page-wrapper {
+
+.page-wrapper{
     padding-top: 100px;
     height: calc(100vh - 80px);
     overflow: auto;
 }
 
+.page-wrapper > .container {
+    padding: 20px;
+    background: rgba(255, 59, 59, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);
+}
 
 .navbar {
     background: linear-gradient(90deg, #000, #da0000);
@@ -35,13 +42,6 @@ body {
 .navbar-nav .nav-link:hover {
     color: #5f0000;
     text-shadow: 0 0 10px rgba(255, 59, 59, 0.8);
-}
-
-body > .container {
-    padding: 20px;
-    background: rgba(255, 59, 59, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);
 }
 
 .btn-red {
