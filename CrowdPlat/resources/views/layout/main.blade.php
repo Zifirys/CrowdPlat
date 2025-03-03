@@ -21,7 +21,7 @@
                         <li class="nav-item"><a class="nav-link" href="">Главная</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/articles') }}">Статьи</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Тесты</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Регистрация/Рейтинг</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Ваш профиль</a></li>
                     </ul>
                 </div>
             </div>
