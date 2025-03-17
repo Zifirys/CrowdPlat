@@ -11,11 +11,11 @@
         <div class="row w-100">
             <div class="col-md-6 box login-box">
                 <h2>Login</h2>
-                <button class="btn btn-dark">Go</button>
+                <a href="" class="btn btn-dark">Go</a>
             </div>
             <div class="col-md-6 box register-box">
                 <h2>Register</h2>
-                <button class="btn btn-dark">Go</button>
+                <a href="{{ route('register') }}" class="btn btn-dark">Go</a>
             </div>
         </div>
     </div>

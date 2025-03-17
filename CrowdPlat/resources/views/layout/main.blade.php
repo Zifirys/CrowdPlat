@@ -12,16 +12,19 @@
     <body>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand text-danger" href="#">CrowdPlat</a>
+                <a class="navbar-brand text-danger" href="{{ route('home') }}">CrowdPlat</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/articles') }}">Статьи</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Статьи</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Тесты</a></li>
+                        <!-- если пользователь с системе, то отправляем его на его профиль -->
                         <li class="nav-item"><a class="nav-link" href="">Ваш профиль</a></li>
+                        <!-- иначе даем выбор -->
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login.or.create') }}">Ваш профиль</a></li>
                     </ul>
                 </div>
             </div>
