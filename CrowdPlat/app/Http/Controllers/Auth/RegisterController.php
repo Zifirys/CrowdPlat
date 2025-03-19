@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -11,23 +13,25 @@ class RegisterController extends Controller
         return view('pages.auth.register');
     }
 
-    public function store(Request $request)
-    	{
-        	// валидация
-        	// $data = $request->validate([
-            // 	'first_name' => 'string|max:255|trim',
-            //     'last_name' => 'string|max:255|trim',
-            //     'nickname' => 'required|min:3|max:50|unique:users,nickname|trim',
-            //     'email' => 'required|email|max:255|unique:users,email|trim',
-            //     'email_confirmation' => 'required|email|max:255|same:email|trim',
-            //     'password' => 'required|string|min:8|confirmed|regex:/[a-z]/|regex:/[0-9]/',
-       		// ]);
+    public function store(Request $request){
 
-        	// $user = new User();
-        	// $user->fill($data);
-        	// $user->save();
+        $data = $request->validate([
+            'first_name' => 'nullable|string|max:255',
+            'last_name' => 'nullable|string|max:255',
+            'nickname' => 'required|string|min:3|max:50',
+            'email' => 'required|email|max:255|unique:users,email',
+            'email_confirmation' => 'required|email|max:255|same:email',
+            'password' => 'required|string|min:8|regex:/[a-z]/|regex:/[0-9]/|confirmed',
+        ]);
 
-        	return redirect()->route('home');
-    	}
-
+        $data['password'] = Hash::make($data['password']);
+    
+        try {
+            $user = User::create($data);
+            
+            return redirect()->route('home')->with('success', 'Вы успешно зарегистрированы!');
+        } catch (\Throwable $e) { //ловит любые ошибки и исключения, включая фатальные
+            return redirect()->back()->withErrors(['error' => 'Не удалось сохранить пользователя'])->withInput();
+        }
+    }
 }

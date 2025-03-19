@@ -11,7 +11,7 @@
         <div class="row w-100">
             <div class="col-md-6 box login-box">
                 <h2>Login</h2>
-                <a href="" class="btn btn-dark">Go</a>
+                <a href="{{ route('login') }}" class="btn btn-dark">Go</a>
             </div>
             <div class="col-md-6 box register-box">
                 <h2>Register</h2>

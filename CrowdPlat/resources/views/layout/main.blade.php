@@ -6,7 +6,7 @@
         <title>@yield('title')</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="{{ asset('assets/css/layout/main-layout.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
         @yield('css')
     </head>
     <body>

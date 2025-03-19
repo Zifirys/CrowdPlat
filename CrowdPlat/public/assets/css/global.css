@@ -4,7 +4,6 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-
 .page-wrapper{
     padding-top: 100px;
     height: calc(100vh - 80px);
@@ -76,4 +75,38 @@ body {
         margin: 0;
         padding: 0;
     }
+}
+
+label.required::after {
+    content: ' *';
+    color: red;
+    font-size: 1.2em;
+}
+
+.styled-checkbox {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.styled-checkbox:checked {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.styled-checkbox:checked::after {
+    content: '✔';
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
 }
