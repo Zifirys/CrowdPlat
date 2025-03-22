@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class RegisterController extends Controller
 {
+
     public function index(){
         return view('pages.auth.register');
     }
@@ -25,10 +27,12 @@ class RegisterController extends Controller
         ]);
 
         $data['password'] = Hash::make($data['password']);
-    
+
         try {
             $user = User::create($data);
-            
+
+            event(new Registered($user));
+
             return redirect()->route('home')->with('success', 'Вы успешно зарегистрированы!');
         } catch (\Throwable $e) { //ловит любые ошибки и исключения, включая фатальные
             return redirect()->back()->withErrors(['error' => 'Не удалось сохранить пользователя'])->withInput();

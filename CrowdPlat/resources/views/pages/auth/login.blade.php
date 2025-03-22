@@ -36,7 +36,7 @@
                     <input type="password" class="form-control" placeholder="Введите пароль" name="password" value="{{ old('password') }}" />
                 </div>
                 <div class="form-group d-flex align-items-center">
-                    <input type="checkbox" id="remember" name="remember" value="true" class="styled-checkbox">
+                    <input type="checkbox" id="remember" name="remember" class="styled-checkbox">
                     <label for="remember" class="ml-2 mt-2">Запомнить меня</label>
                 </div>
                 <div class="d-flex justify-content-center">
