@@ -1,4 +1,4 @@
-@extends('layout.main')
+c@extends('layout.main')
 
 @section('title', 'Сброс пароля')
 @section('css')

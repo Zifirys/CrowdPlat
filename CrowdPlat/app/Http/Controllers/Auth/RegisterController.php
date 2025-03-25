@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class RegisterController extends Controller
 {
-
     public function index(){
         return view('pages.auth.register');
     }
@@ -29,13 +30,21 @@ class RegisterController extends Controller
         $data['password'] = Hash::make($data['password']);
 
         try {
+            DB::beginTransaction();
+
             $user = User::create($data);
+            Auth::login($user);
 
             event(new Registered($user));
 
+            DB::commit();
+
             return redirect()->route('home')->with('success', 'Вы успешно зарегистрированы!');
         } catch (\Throwable $e) { //ловит любые ошибки и исключения, включая фатальные
-            return redirect()->back()->withErrors(['error' => 'Не удалось сохранить пользователя'])->withInput();
+
+            DB::rollBack();
+
+            return redirect()->back()->withErrors(['error' => $e->getMessage()])->withInput();
         }
     }
 }

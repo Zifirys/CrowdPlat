@@ -20,6 +20,14 @@
                     <p class="mb-1"><strong>Ник:</strong> IvanPetrov</p>
                     <p class="mb-1"><strong>Имя:</strong> Иван</p>
                     <p class="mb-1"><strong>Фамилия:</strong> Петров</p>
+                    <p class="mb-1"><strong>Email:</strong> zifirys@mail.ru</p>
+
+{{--                    <p>Пожалуйста, подтвердите свой email. Если вы не получили письмо, <a href="{{ route('verification.send') }}" onclick="event.preventDefault(); document.getElementById('resend-form').submit();">нажмите здесь</a> для повторной отправки.</p>--}}
+
+{{--                    <form id="resend-form" action="{{ route('verification.send') }}" method="POST" style="display: none;">--}}
+{{--                        @csrf--}}
+{{--                    </form>--}}
+
                 </div>
                 <div>
                     <p class="mb-1"><strong>Кол-во написанных статей:</strong> 23</p>
@@ -33,7 +41,7 @@
         </div>
     </div>
 
-    
+
     <div class="row mt-4">
         <div class="col-md-6">
             <h4>Ваши статьи</h4>
@@ -52,7 +60,7 @@
             </ul>
         </div>
     </div>
-    
+
     <div class="row mt-4">
         <div class="col-md-6">
             <h4>Результаты тестов</h4>
