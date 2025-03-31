@@ -10,12 +10,26 @@
     <div class="container">
         <div class="form-container">
             <h2 class="text-center">Сброс пароля</h2>
-            <form>
+
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            <form action="{{ route('password.email') }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Введите email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Введите email" value="{{ old('email') }}">
                 </div>
-                <p class="text-center">При отправле вашего email, и мы вышлем вам ссылку для сброса пароля.</p>
+
+                <div class="form-group">
+                    <label for="nickname">Никнейм</label>
+                    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Введите никнейм" value="{{ old('nickname') }}">
+                </div>
+
+                <p class="text-center">При отправке мы вышлем на указанный email ссылку для сброса пароля.</p>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-red">Отправить ссылку</button>
                 </div>

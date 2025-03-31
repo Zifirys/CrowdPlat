@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +29,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 
-//// Маршрут для повторной отправки письма с подтверждением email
+// повторная отправки письма с подтверждением email
 //Route::post('/email/verification-notification', function (Request $request) {
 //    $request->user()->sendEmailVerificationNotification();
 //
@@ -35,13 +38,12 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
 
 
+Route::middleware('guest')->group(function () {
+    Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
+    Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+    Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+});
 
-
-//Route::post('/logout', function (Request $request) {
-//    auth()->logout();
-//    $request->session()->invalidate();
-//    $request->session()->regenerateToken();
-//
-//    return redirect('/')->with('success', 'Вы вышли из системы.');
-//})->name('logout');
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
