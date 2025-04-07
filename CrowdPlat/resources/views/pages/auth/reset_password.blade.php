@@ -32,14 +32,16 @@
 
                 <input type="hidden" name="token" value="{{ $token }}">
 
+                <input type="hidden" name="email" value="{{ request()->query('email') }}">
+
                 <div class="form-group">
                     <label for="new-password">Новый пароль</label>
-                    <input type="password" class="form-control" id="new-password" placeholder="Введите новый пароль">
+                    <input type="password" class="form-control" id="new-password" name="password" placeholder="Введите новый пароль">
                 </div>
 
                 <div class="form-group">
                     <label for="confirm-password">Подтвердите пароль</label>
-                    <input type="password" class="form-control" id="confirm-password" placeholder="Повторите новый пароль">
+                    <input type="password" class="form-control" id="confirm-password" name="password_confirmation" placeholder="Повторите новый пароль">
                 </div>
 
                 <p class="text-center">При сохранении нового пароля. Ваш старый пароль будет сброшен</p>

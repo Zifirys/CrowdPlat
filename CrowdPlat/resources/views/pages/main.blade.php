@@ -8,12 +8,6 @@
 @section('content')
 
     <section id="articles" class="container mt-3">
-    
-        @if (session('success'))
-            <div class="alert alert-success text-center">
-                {{ session('success') }}
-            </div>
-        @endif
 
         <h2 class="mb-3">Популярные статьи</h2>
         <div class="row">

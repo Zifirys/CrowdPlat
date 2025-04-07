@@ -9,6 +9,13 @@
 
     <div class="container">
         <div class="form-container">
+
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+
             <h2 class="text-center">Вход в аккаунт</h2>
 
             @if ($errors->any())
