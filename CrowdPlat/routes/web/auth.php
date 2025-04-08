@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\View\LoginOrCreateController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ProfilController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -19,6 +20,11 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.login');
 
+Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+
+
+
+
 Route::get('/email/verify', function () {
     return view('mail.verification');
 })->name('verification.notice');
@@ -28,15 +34,12 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     return redirect()->route('home')->with('success', 'Email подтверждён!');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
-
 // повторная отправки письма с подтверждением email
 //Route::post('/email/verification-notification', function (Request $request) {
 //    $request->user()->sendEmailVerificationNotification();
 //
 //    return back()->with('message', 'Ссылка для подтверждения отправлена!');
 //})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
-
 
 Route::middleware('guest')->group(function () {
     Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');

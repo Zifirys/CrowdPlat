@@ -45,7 +45,7 @@
     display: flex;
     align-items: start;
     gap: 20px;
-    box-shadow: 0 0 10px rgb(2, 132, 255);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
     padding: 20px;
     justify-content: space-between;
 }
@@ -60,5 +60,36 @@
     border: none;
     border-radius: 8px;
     margin-bottom: 5px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    display: block;
+    margin: 10px auto;
+}
+
+.mood-scale {
+    width: 150px;
+    height: 20px;
+    background: linear-gradient(to right, red, orange, yellow, #00e600, #009900, #003300);
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.mood-scale .circle {
+    width: 20px;
+    height: 100%;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 

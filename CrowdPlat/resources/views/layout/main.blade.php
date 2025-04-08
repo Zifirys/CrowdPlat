@@ -23,14 +23,13 @@
                         <li class="nav-item"><a class="nav-link" href="">Тесты</a></li>
 
                         @if(Auth::check())
-                            <li class="nav-item"><a class="nav-link" href="">Ваш профиль</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('profil') }}">Ваш профиль</a></li>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
                             </form>
 
                             <li class="nav-item"><a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выйти</a></li>
-
                         @else
                             <li class="nav-item"><a class="nav-link" href="{{ route('login.or.create') }}">Войти</a></li>
                         @endif
