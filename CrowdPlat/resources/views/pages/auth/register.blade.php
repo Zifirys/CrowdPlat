@@ -10,16 +10,8 @@
     <div class="container">
         <h2 class="text-center">Регистрация</h2>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        
+        <x-errors />
+
         <form method="POST" action="{{ route('register.store') }}">
             @csrf
             <div class="form-group">

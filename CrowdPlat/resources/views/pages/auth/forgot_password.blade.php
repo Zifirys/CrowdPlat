@@ -11,21 +11,9 @@
         <div class="form-container">
             <h2 class="text-center">Сброс пароля</h2>
 
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
+            <x-status />
 
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            <x-errors />
 
             <form action="{{ route('password.email') }}" method="POST">
                 @csrf

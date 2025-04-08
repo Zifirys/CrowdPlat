@@ -9,6 +9,13 @@
 
     <section id="articles" class="container mt-3">
 
+{{--        <x-alert-seccuss />--}}
+        @if (session('success'))
+            <div class="alert alert-success text-center" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <h2 class="mb-3">Популярные статьи</h2>
         <div class="row">
             <div class="col-md-4">
