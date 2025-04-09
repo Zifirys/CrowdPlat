@@ -15,7 +15,7 @@
 
             <x-errors />
 
-            <form action="{{ route('') }}" method="POST">
+            <form action="{{ route('password.email') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
