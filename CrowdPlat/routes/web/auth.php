@@ -20,9 +20,10 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.login');
 
-Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
-
-
+Route::middleware('auth')->group(function () {
+    Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+    Route::post('/profil/upload', [ProfilController::class, 'upload'])->name('profil.upload');
+});
 
 
 Route::get('/email/verify', function () {

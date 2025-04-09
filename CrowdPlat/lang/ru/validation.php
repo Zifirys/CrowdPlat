@@ -166,6 +166,7 @@ return [
         'password' => 'Пароль',
         'password_confirmation' => 'Повторный пароль',
         'email_confirmation' => 'Подтверждение E-mail',
+        'image_profile' => 'Фото'
     ],
 
 ];
