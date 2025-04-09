@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Статья 1</h5>
                         <p class="card-text">Краткое описание статьи...</p>
-                        <a href="#" class="btn btn-red">Читать</a>
+                        <a href="{{ route('articles.list') }}" class="btn btn-red">Читать</a>
                     </div>
                 </div>
             </div>

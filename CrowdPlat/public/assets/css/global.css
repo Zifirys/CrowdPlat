@@ -119,3 +119,25 @@ label.required::after {
     transform: translate(-50%, -50%);
     font-weight: bold;
 }
+
+.pagination .page-item {
+    margin-right: 5px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: lightgrey;
+    border-color: pink;
+    color: white;
+}
+
+.pagination .page-link {
+    color: white;
+    background-color: grey;
+    border: 1px solid black;
+}
+
+.pagination .page-link:hover {
+    background-color: darkred;
+    color: white;
+    border-color: red;
+}

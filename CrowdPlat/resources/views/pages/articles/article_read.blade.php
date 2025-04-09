@@ -10,18 +10,20 @@
         <div class="container">
             <div class="post">
                 <div class="d-flex justify-content-between align-items-center mt-4">
-                    <h1 class="post-title">Заголовок поста</h1>
-                    <a href="" class="btn btn-red">Редактировать</a>
+                    <h1 class="post-title">{{ $article->title }}</h1>
+                    <a href="{{ route('article.edit') }}" class="btn btn-red">Редактировать</a>
                 </div>
-                
-                <p class="post-meta">Автор: Имя | Дата публикации: 01.03.2025</p>
+
+                <p class="post-meta">Автор: Имя | Дата публикации: {{ \Carbon\Carbon::parse($article->created_at)->format('d.m.Y') }}</p>
+
                 <div class="post-content">
-                    <p>Текст статьи. Здесь будет основное содержание поста.</p>
+{{--             отступы и переносиы должны засчитываться!--}}
+                    <p>{{ $article->content }}</p>
                 </div>
-                
+
                 <div class="post-actions d-flex justify-content-between align-items-center mt-3">
                     <div class="like-button" onclick="toggleLike(this)">
-                        <i class="bi bi-heart"></i> <span class="like-count">0</span>
+                        <i class="bi bi-heart"></i> <span class="like-count">{{ $article->likes_count }}</span>
                     </div>
                     <a href="" class="btn btn-dark">Назад</a>
                 </div>
